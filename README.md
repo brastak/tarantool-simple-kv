@@ -13,11 +13,13 @@ After that service will accept requests via HTTP protocol on port 80. If you nee
 Application consists of two docker-based services. The first service (app directory) contains application logic and defines interaction protocol. The second one (http directory) contains nginx configuration that allows to expose application methods to HTTP.
 
 ## Operarations
-**Create record**: `POST http://<hostname>/kv`
-Payload message must be JSON document which contains "key" and "value" properties. "key" will be used as primary key in persistence store and "value" will be considered as data to store.
-**Retreive record**: `GET http://<hostname>/kv/<key>`
-**Update record**: `PUT http://<hostname>/kv/<key>`
-**Detele record**: `DELETe http://<hostname>/kv/<key>`
+- **Create record**: `POST http://<hostname>/kv`
+
+ Payload message must be JSON document which contains "key" and "value" properties. "key" will be used as primary key in persistence store and "value" will be considered as data to store.
+
+- **Retreive record**: `GET http://<hostname>/kv/<key>`
+- **Update record**: `PUT http://<hostname>/kv/<key>`
+- **Delete record**: `DELETE http://<hostname>/kv/<key>`
 
 ## Configuration
 You will need to edit sources to make changes in service configuration. And after that, you will need to rebuild and restart the service.
