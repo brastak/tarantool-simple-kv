@@ -15,7 +15,7 @@ Application consists of two docker-based services. The first service (app direct
 ## Operarations
 - **Create record**: `POST http://<hostname>/kv`
 
- Payload message must be JSON document which contains "key" and "value" properties. "key" will be used as primary key in persistence store and "value" will be considered as data to store.
+   Payload message must be JSON document which contains "key" and "value" properties. "key" will be used as primary key in persistence store and "value" will be considered as data to store.
 
 - **Retreive record**: `GET http://<hostname>/kv/<key>`
 - **Update record**: `PUT http://<hostname>/kv/<key>`
@@ -24,6 +24,6 @@ Application consists of two docker-based services. The first service (app direct
 ## Configuration
 You will need to edit sources to make changes in service configuration. And after that, you will need to rebuild and restart the service.
 ### Maximum message size
-By default, it is limited by 8 KB. If you need to increase this, edit http/nginx.conf file and change client_max_body_size parameter (also, you may need to change client_header_buffer_size and set up tnt_pass_http_request_buffer_size params).
+By default, it is limited by 8 KB. If you need to increase this, edit *http/nginx.conf* file and *change client_max_body_size* parameter (also, you may need to change *client_header_buffer_size* and set up *tnt_pass_http_request_buffer_size* params).
 ### Request rate
-By default, request rate is limited by 200 requests per second. If you need to change this, edit http/nginx.conf file and change limit_req_zone parameter definition.
+By default, request rate is limited by 200 requests per second. If you need to change this, edit *http/nginx.conf* file and change *limit_req_zone* parameter definition.
