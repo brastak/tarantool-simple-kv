@@ -1,0 +1,21 @@
+version: '2.2'
+services:
+  tarantool-kv-app:
+    build: app
+    volumes:
+      - tarantool-data:/var/lib/tarantool
+    cpus: 0.75
+    mem_reservation: 384m
+    mem_limit: 512m
+  tarantool-kv-http:
+    ports:
+      - "80:80"
+    depends_on: 
+      - tarantool-kv-app
+    build: http
+    cpus: 0.25
+    mem_reservation: 128m
+    mem_limit: 256m
+
+volumes:
+  tarantool-data:  
