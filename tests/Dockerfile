@@ -1,0 +1,7 @@
+FROM maven:3.6-jdk-11
+
+ARG TESTS_DIR="/root"
+
+COPY pom.xml $TESTS_DIR/
+COPY src $TESTS_DIR/src
+WORKDIR $TESTS_DIR
